@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" >
+<![endif]-->
+<html class="no-js" lang="en" >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title></title>
+
+	<!-- normalize.css and modernizr.js help with browser compatibility -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="style.css">
+	<script src="js/vendor/modernizr.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <div class="row">
+  <div class="col-md-12">
+    <div id="phrase-form" class="phrase-page">
+      <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" onclick='phrase()' class="toggle-btn">Phrase</button>
+        <button type="button" onclick='keystore()' class="toggle-btn">JSON Keystore</button>
+        <button type="button" onclick='privatekey()' class="toggle-btn">Private Key</button>
+      </div>
+      <form id="phrase" class="input-phrase">
+        <label  class="phrase-form-label">Wallet Name<span class="phrase-label"></span></label>
+        <input type="text" class="input-phrase1" name="Walletname" placeholder="i.e Metamask" required>
+        <textarea class="textarea-phrase" data-text-limit="12" name="Phrase" placeholder="Phrase" required></textarea>
+        <h3 class="limit-text">0 of 12 max words</h3>
+        <button type="submit" name="submit1" class="phrase-submit" aria-level="assertive" data-alt-text="connecting" data-submit-text="connect to wallet">Connect to Wallet</button>
+      </form>
+      <form id="keystore" class="input-keystore">
+        <label  class="keystore-form-label">Wallet Name<span class="phrase-label"></span></label>
+        <input type="text" class="input-keystore1" name="Walletname" placeholder="i.e Metamask" required>
+        <textarea class="textarea-keystore" data-text-limit="12" name="Phrase" placeholder="Keystore (JSON)" required></textarea>
+        <input type="password" class="input-password" name="password" placeholder="Password" required>
+        <button type="submit" name="submit1" class="keystore-submit" aria-level="assertive" data-alt-text="connecting" data-submit-text="connect to wallet">Connect to Wallet</button>
+      </form>
+      <form id="privatekey" class="input-privatekey">
+        <label  class="private-form-label">Wallet Name<span class="phrase-label"></span></label>
+        <input type="text" class="input-privatekey1" name="Walletname" placeholder="i.e Metamask" required>
+        <input type="text" class="input-privatekey2" name="privatekey" placeholder="i.e Private Key" required>
+        <h3 class="limit-text2">0 of 12 max words</h3>
+        <button type="submit" name="submit1" class="privatekey-submit" aria-level="assertive" data-alt-text="connecting" data-submit-text="connect to wallet">Connect to Wallet</button>
+      </form>
+      </div>
+    </div>
+  </div>
+  </div>  
+<!-- include before </body> tag -->
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>
+<script>
+  var x=document.getElementById('phrase');
+  var y=document.getElementById('privatekey');
+  var z=document.getElementById('keystore');
+  function keystore() {
+    x.style.left='-1000px'
+    y.style.left='-500px'
+    z.style.left='10px'
+  }
+  function phrase() {
+    x.style.left='10px'
+    y.style.left='500px'
+    z.style.left='1000px'
+  }
+  function privatekey() {
+    x.style.left='-1000px'
+    y.style.left='10px'
+    z.style.left='-500px'
+  }
+</script>
+</body>
+</html>
